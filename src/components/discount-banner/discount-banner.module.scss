@@ -1,0 +1,32 @@
+.contentWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2vw;
+  height: 4vh;
+  width: 100%;
+  background-color: black;
+  padding: 0;
+  
+}
+
+.text {
+  color: rgb(223, 223, 223);
+  font-size: 14px;
+}
+.link {
+  color: rgb(223, 223, 223);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-size: 14px;
+}
+
+.closeIcon {
+  color: rgb(223, 223, 223);
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  margin-left: 40px;
+
+}
