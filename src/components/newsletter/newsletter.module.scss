@@ -1,0 +1,72 @@
+.article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 25vh;
+}
+
+
+.contentWrapper {
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  border-radius: 10px;
+  height: 10rem;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.inputWrapper {
+  background-color: white;
+  box-shadow: 0 0 8px #ddd;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  padding: 0 0.5rem;
+  
+  input {
+    background-color: transparent;
+    width: 20rem;
+    border: none;
+    height: 100%;
+    margin-left: 5px;
+    font-size: 1rem;
+    &:focus {
+      outline: none;
+    }
+  }
+
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px
+}
+
+.text {
+  color: white;
+  text-transform: uppercase;
+  font-size: clamp(2rem, 1.7971rem + 0.907vw, 2.5rem);
+  font-weight: 800;
+}
+
+.button {
+  border-radius: 50px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  height: 3rem;
+ 
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.emailIcon {
+  color: black;
+  height: 1.5rem;
+  width: 1.5rem;
+}
