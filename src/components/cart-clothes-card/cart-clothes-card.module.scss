@@ -1,0 +1,64 @@
+.cartClothesCard {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  padding: 1.5rem 0;
+  .img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 150px;
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;;
+      .name {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: black;
+      }
+      .size {
+        font-size: 1rem;
+        font-weight: normal;
+        color: black;
+        span {
+          color: rgb(0, 0, 0, 0.6);
+        }
+      }
+
+      .price {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+      }
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      .button {
+        background-color: transparent;
+        color: red;
+        transition: color 0.3s ease;
+        &:hover {
+          color: rgb(255, 0, 0, 0.6)
+        }
+        svg {
+          width: 1.2rem;
+          height: 1.2rem;
+        }
+      }
+    }
+  }
+}
