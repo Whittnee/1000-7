@@ -1,14 +1,22 @@
 .footer {
   background-color: white;
+  display: flex;
+  flex-direction: column;
 }
 
-.contentWrapper {
+.content {
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 20px;
-  height: 20vh;
-  border-bottom: 1px solid rgb(223, 223, 223);
+  padding: 3.6rem 3.6rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
 }
 
 .logo {
@@ -16,79 +24,45 @@
   padding: 2px;
   color: black;
   font-weight: 1000;
-  font-size: 1.56rem;
+  font-size: 1.55rem;
 }
 
-.logoWrapper {
+.icons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 25px;
-}
-
-.text {
-  color: #696969;
+  gap: 15px;
 }
 
 .link {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 2rem;
-  height: 2rem;
-  border: 1px solid rgb(103, 103, 103);
+  border: 1px solid black;
   border-radius: 50px;
-  background-color: white;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem;
+  color: black;
+  transition: color 0.3s ease, border-color 0.3s ease;
   &:hover {
-    border: 1px solid black;
+    color: rgb(72, 72, 72);
+    border-color: rgb(72, 72, 72);
   }
 }
 
-.socialIcon {
-  width: 1.3rem;
-  height: 1.3rem;
-  color: black;
-  
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
-.div {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.menu {
-  display: flex;
-  flex-direction: row;
-  gap: 110px;
-}
-
-.ulIcons {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-}
-
-.ul {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.h4 {
-  color: black;
-  text-transform: uppercase;
-}
-
-.license  {
+.license {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  height: 10vh;
+  padding: 1rem 3.6rem;
 }
 
-.paymentIcons {
+.icons {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -97,5 +71,5 @@
 .paymentIcon {
   width: 2rem;
   height: 2rem;
-  color: black
+  color: black;
 }
