@@ -1,0 +1,75 @@
+.footer {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  padding: 3.6rem 3.6rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.logo {
+  border: 4px solid black;
+  padding: 2px;
+  color: black;
+  font-weight: 1000;
+  font-size: 1.55rem;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.link {
+  display: flex;
+  border: 1px solid black;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem;
+  color: black;
+  transition: color 0.3s ease, border-color 0.3s ease;
+  &:hover {
+    color: rgb(72, 72, 72);
+    border-color: rgb(72, 72, 72);
+  }
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.license {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 1rem 3.6rem;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.paymentIcon {
+  width: 2rem;
+  height: 2rem;
+  color: black;
+}
