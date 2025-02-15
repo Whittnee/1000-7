@@ -1,0 +1,28 @@
+.button {
+  background-color: rgb(87, 78, 255);
+  color: var(--text-color);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.3rem;
+  width: 25rem;
+  height: 3.75rem;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: rgba(87, 78, 255, 0.7);
+  }
+  &:disabled {
+    pointer-events: none;
+    background-color: rgba(16, 16, 16, 0.3)
+  }
+  svg {
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-left: 5px;
+  }
+  span {
+    font-weight: bold;
+  }
+}
