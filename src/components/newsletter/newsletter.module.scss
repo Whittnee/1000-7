@@ -1,25 +1,24 @@
-.article {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  height: 25vh;
+.newsletter {
+  background-color: var(--accent-color);
+  border-radius: 15px;
+  padding: 2rem 3.5rem;
+  margin: 5rem 3.6rem;
 }
 
-
-.contentWrapper {
+.content {
   display: flex;
   flex-direction: row;
-  background-color: black;
-  border-radius: 10px;
-  height: 10rem;
-  width: 100%;
-  align-items: center;
   justify-content: space-around;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px
+}
+
 .inputWrapper {
-  background-color: white;
+  background-color: var(--bg-color);
   box-shadow: 0 0 8px #ddd;
   border-radius: 50px;
   display: flex;
@@ -33,40 +32,37 @@
     border: none;
     height: 100%;
     margin-left: 5px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     &:focus {
       outline: none;
     }
   }
-
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px
 }
 
 .text {
-  color: white;
+  color: var(--text-color);
   text-transform: uppercase;
-  font-size: clamp(2rem, 1.7971rem + 0.907vw, 2.5rem);
+  font-size: clamp(2rem, -0.3704rem + 3.7037vw, 2.5rem);
   font-weight: 800;
 }
 
 .button {
   border-radius: 50px;
-  background-color: white;
+  background-color: var(--bg-color);
+  color: var(--accent-color);
   border: none;
-  cursor: pointer;
   height: 3rem;
- 
   font-size: 1rem;
   font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  &:hover {
+    background-color: var(--accent-hover-color);
+    color: var(--text-color);
+  }
 }
 
 .emailIcon {
-  color: black;
+  color: var(--accent-color);
   height: 1.5rem;
   width: 1.5rem;
 }
