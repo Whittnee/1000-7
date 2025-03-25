@@ -1,0 +1,29 @@
+.imageSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 15px
+}
+
+.image {
+  width: 138px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  cursor: pointer;
+  outline: 1px solid transparent;
+  transition: outline 0.3s ease;
+  
+  &.active {
+    outline: 1px solid var(--accent-color);
+  }
+}
+
+@media (width <= 1440px) {
+  .imageSelector {
+    flex-direction: row;
+    order: 2
+  }
+  .image {
+    width: 118px;
+  }
+}

@@ -1,0 +1,66 @@
+.colorSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header {
+  margin-bottom: 5px;
+  color: var(--opacity-color);
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--border-opacity-color);
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  input {
+    display: none;
+  }
+  &.active {
+    
+    .checkMark {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &:hover {
+    border-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.checkMark {
+  width: 45%;
+  height: 45%;
+  opacity: 0;
+  visibility: hidden;
+  color: var(--text-color);
+  transition: opacity 0.3s ease;
+}
+
+.small {
+  &.option {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+
+.medium {
+  &.option {
+    height: 3rem;
+    width: 3rem;
+  }
+}

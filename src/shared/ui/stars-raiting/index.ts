@@ -1,0 +1,1 @@
+export { StarsRaiting } from "./stars-raiting"
