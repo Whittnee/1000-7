@@ -1,0 +1,39 @@
+.swithcer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  background-color: #d2d2d2;
+  height: 1.5rem;
+  width: 3rem;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: var(--accent-color);
+    border-radius: 50px;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin: 0 3px;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+  }
+
+  &.active {
+    background-color: var(--accent-color);
+    &::before {
+      transform: translateX(1.5rem);
+      background-color: #d2d2d2;
+    }
+  }
+  
+  
+  input {
+    display: none;
+  }
+}

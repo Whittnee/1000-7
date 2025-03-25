@@ -1,0 +1,27 @@
+.priceRange {
+  width: 100%;
+}
+
+.track {
+  height: 6px;
+  width: 100%;
+  border-radius: 3px;
+  background-color: #000000;
+  position: relative;
+}
+
+.thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  background-color: var(--accent-color);
+  position: relative;
+}
+
+.value {
+  position: absolute;
+  top: 25px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--accent-color); 
+}

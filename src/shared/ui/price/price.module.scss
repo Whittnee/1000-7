@@ -1,0 +1,40 @@
+.price {
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.discountedPrice {
+  text-decoration: line-through;
+  opacity: 40%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 51, 51, 0.1);
+  padding: 0.4rem 0.8rem;
+  border-radius: 50px;
+}
+.discount {
+  color: var(--discount-color);
+  font-weight: bold;
+}
+
+.small {
+  &.price {
+    font-size: 1.5rem;
+  }
+  &.discount {
+    font-size: 0.8rem;
+  }
+}
+
+.medium {
+  &.price {
+    font-size: 2rem;
+  }
+  &.discount {
+    font-size: 1rem;
+  }
+}
