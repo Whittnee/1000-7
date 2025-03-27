@@ -1,1 +1,0 @@
-export { ClothesCard } from './clothes-card'

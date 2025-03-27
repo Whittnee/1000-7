@@ -1,1 +1,0 @@
-export { DiscountBanner } from './discount-banner'
