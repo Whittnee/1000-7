@@ -1,0 +1,66 @@
+.review {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 25px;
+  border: 1px solid var(--border-opacity-color);
+  border-radius: 15px;
+  padding: 1.75rem 2rem;
+  height: 100%;
+}
+
+.star {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.img {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50px;
+  object-fit: cover;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: var(--accent-color)
+}
+
+.checkMark {
+  color: rgb(16, 196, 76);
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.comment {
+  font-weight: normal;
+  font-size: 1rem;
+  color: var(--opacity-color);
+  white-space: pre-line
+}
+
+.postedOn {
+  font-weight: normal;
+  font-size: 1rem;
+  color: rgb(0, 0, 0, 0.7);
+}
+
+
+
+
+
+
