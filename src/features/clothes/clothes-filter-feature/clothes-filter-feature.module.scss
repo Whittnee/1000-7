@@ -1,0 +1,74 @@
+.clothesFilterFeature {
+  display: flex;
+  max-width: 300px;
+  width: 100%;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  border: 1px solid var(--border-opacity-color);
+  border-radius: 15px;
+}
+
+.property {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px
+}
+
+.span {
+  color: var(--accent-color);
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: transparent;
+  transform: rotate(180deg);
+  color: var(--accent-color)
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  &.open {
+    max-height: 150px;
+  }
+}
+
+.apply {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+  font-size: 1rem;
+  border-radius: 50px;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: var(--accent-hover-color)
+    
+  }
+}
