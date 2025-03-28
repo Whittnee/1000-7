@@ -1,0 +1,1 @@
+export { ClothesFilterFeature } from "./clothes-filter-feature/clothes-filter-feature"
