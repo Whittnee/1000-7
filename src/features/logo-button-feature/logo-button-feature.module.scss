@@ -1,0 +1,13 @@
+.logo {
+  border: 4px solid var(--accent-color);
+  background-color: transparent;
+  padding: 2px;
+  color: var(--accent-color);
+  font-weight: 900;
+  font-size: 1.6rem;
+  transition: border-color 0.3s ease, color 0.3s ease;
+  &:hover {
+    color: var(--accent-hover-color);
+    border-color: var(--accent-hover-color);
+  }
+}
