@@ -1,50 +1,34 @@
-# React + TypeScript + Vite
+# Интернет-магазин 1000-7
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Тематический [интернет-магазин](https://1000-7.shop) для подростковой одежды с каталогом, настроенной корзиной, поиском, фильтрами и тестовой онлайн оплатой.  
 
-Currently, two official plugins are available:
+![alt text](image.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Структура проекта
 
-## Expanding the ESLint configuration
+- [1000-7-Backend](https://github.com/Whittnee/1000-7-Backend)
+- 1000-7-Frontend - текущий репозиторий
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Выполненные задачи
 
-- Configure the top-level `parserOptions` property like this:
+- сконфигурировал и развернул backend на удалённом сервере
+- реализовал тестовую онлайн оплату с помощью Stripe
+- выстроил бизнес-логику с помощью RTK
+- сверстал компоненты с помощью React и настроил маршрутизацию
+- приобрёл доменное имя и настроил сертификацию
+- перевёл проект на FSD архитектуру
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Технологии 
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- React, TS, HTML, Redux, RTK, SCSS, Express.js, Vite
+- использовал crypto.randomUUID для синхронизации корзины с сервером
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Инструкция по запуску
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Чтобы запустить приложение, необходимо:
+1. Склонировать репозиторий:  
+```git clone https://github.com/Whittnee/1000-7-Backend.git```
+2. Установить все зависимости:  
+```yarn или npm i```
+3. Теперь можно запустить приложение:  
+```yarn dev или npm run dev```
