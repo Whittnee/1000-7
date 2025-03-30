@@ -1,0 +1,78 @@
+.footer {
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  padding: 0 3.6rem;
+  margin-bottom: 3.6rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.logo {
+  border: 4px solid var(--accent-color);
+  padding: 2px;
+  color: var(--accent-color);
+  font-weight: 1000;
+  font-size: 1.55rem;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.link {
+  display: flex;
+  border: 1px solid var(--accent-color);
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem;
+  color: var(--accent-color);
+  transition: color 0.3s ease, border-color 0.3s ease;
+  &:hover {
+    color: var(--accent-hover-color);
+    border-color: var(--accent-hover-color);
+  }
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 0 3.6rem;
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  color: var(--accent-color);
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+
+.paymentIcon {
+  width: 2rem;
+  height: auto;
+  color: var(--accent-color);
+}
