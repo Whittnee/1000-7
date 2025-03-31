@@ -1,0 +1,54 @@
+.informationBanner {
+  background-color: var(--accent-color);
+  display: flex;
+  padding: 3rem 3.6rem;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.h1 {
+  color: var(--accent-color);
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.3;
+  // font-size: clamp(4.375rem, -3.3173rem + 12.0192vw, 7.5rem);
+  font-size: clamp(9.375rem, 6.25rem + 3.9063vw, 12.5rem);
+}
+
+.animateGlow {
+  opacity: 0;
+  text-shadow: 0 0 0px var(--accent-color);
+  transition: opacity 1.2s ease-out, text-shadow 1.2s ease-out;
+  &.visible {
+    opacity: 1;
+    text-shadow: 0px 0px 3px var(--text-color)
+  }
+}
+
+.button {
+  background-color: var(--bg-color);
+  color: var(--accent-color);
+  border-radius: 50px;
+  height: 3rem;
+  width: 15rem;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  &:hover {
+    background-color: var(--accent-hover-color);
+    color: var(--text-color);
+  }
+}
+
