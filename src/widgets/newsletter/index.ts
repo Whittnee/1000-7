@@ -1,0 +1,1 @@
+export { Newsletter } from "./ui/newsletter"
