@@ -1,0 +1,66 @@
+.productTabs {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0 3.6rem;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+}
+
+.tab {
+  font-size: 1.4rem;
+  color: var(--opacity-color);
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--opacity-color);
+  transition: color 0.3s ease, border-color 0.3s ease;
+  &.active {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+  }
+}
+
+.tabContent {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.count {
+  color: var(--opacity-color);
+  font-size: 1rem;
+  font-weight: normal;
+  padding-top: 2.5px;
+}
+
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px
+}
+
+
+
+
