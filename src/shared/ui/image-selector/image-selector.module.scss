@@ -5,10 +5,10 @@
 }
 
 .image {
-  width: 138px;
-  height: auto;
+  width: 140px;
+  height: 140px;
   border-radius: 15px;
-  object-fit: cover;
+  object-fit: contain;
   cursor: pointer;
   outline: 1px solid transparent;
   transition: outline 0.3s ease;
@@ -24,6 +24,7 @@
     order: 2
   }
   .image {
-    width: 118px;
+    width: 120px;
+    height: 120px;
   }
 }

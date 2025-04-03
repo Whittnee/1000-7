@@ -38,7 +38,7 @@ const initialState: IReviewsState = {
       id: 4,
       name: "Игра 12+, уроды",
       image:
-        "https://cdn.discordapp.com/emojis/1082488605051719720.webp?size=96",
+        "https://i.ibb.co/zW96Pb3V/2025-03-28-071318721.png",
       rating: 4.7,
       comment: "I love this website! It's so easy to find clothes I want.",
       postedOn: "December 15, 2024",
@@ -73,7 +73,7 @@ const initialState: IReviewsState = {
       id: 8,
       name: "Представитель северной столицы",
       image:
-        "https://cdn.discordapp.com/emojis/826581447795015760.webp?size=96",
+        "https://i.ibb.co/v4ZqjsHV/2025-03-28-071046765.png",
       rating: 2.5,
       comment: "I'd rather buy a beer than this garbage.",
       postedOn: "March 2, 2025",
@@ -105,7 +105,7 @@ const initialState: IReviewsState = {
       image:
         "https://cdn.discordapp.com/avatars/529668518724108288/b82b8578a09f271c400982428767521d.webp?size=240",
       rating: 4.5,
-      comment: ``,
+      comment: `Avacado Pajama fits exelent and the quality is good enough.`,
       postedOn: "January 18, 2025",
     },
   ],
