@@ -1,8 +1,12 @@
-import { useLocation } from "react-router"
-import { Cart } from "../../components/cart"
+import { FC } from "react";
+import { MightLike } from "@/widgets/might-like";
+import { Cart } from "@/widgets/cart/ui/cart";
 
-export const CartPage = () => {
+export const CartPage: FC = () => {
   return (
-    <Cart/>
-  )
-}
+    <>
+      <Cart />
+      <MightLike />
+    </>
+  );
+};
