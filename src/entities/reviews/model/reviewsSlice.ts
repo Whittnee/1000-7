@@ -91,7 +91,7 @@ const initialState: IReviewsState = {
       id: 11,
       name: "Фанат Безрукова",
       image:
-        "https://cdn.discordapp.com/emojis/924657280832638997.webp?size=96",
+        "https://i.ibb.co.com/GfF9kC6N/image-2025-04-03-150205176.png",
       rating: 5,
       comment: `This store is so cool that I'm going to let you use my card to shop here. Here are the credits: 
       4242 4242 4242 4242 
@@ -103,9 +103,9 @@ const initialState: IReviewsState = {
       id: 10,
       name: "Empthy.",
       image:
-        "https://cdn.discordapp.com/avatars/529668518724108288/b82b8578a09f271c400982428767521d.webp?size=240",
+        "https://i.ibb.co.com/Q315GMJ8/image-2025-04-03-151009406.png",
       rating: 4.5,
-      comment: `Avacado Pajama fits exelent and the quality is good enough.`,
+      comment: `Avacado Pajamas fits exelent and the quality is good enough.`,
       postedOn: "January 18, 2025",
     },
   ],
