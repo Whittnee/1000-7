@@ -79,3 +79,11 @@
     object-fit: cover;
   }
 }
+
+@media (width <= 1160px) {
+  .searchBarFeature {
+    input {
+      width: 20rem;
+    }
+  }
+}
