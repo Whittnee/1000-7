@@ -1,15 +1,19 @@
 .newsletter {
-  background-color: var(--accent-color);
-  border-radius: 15px;
-  padding: 2rem 3.5rem;
   margin: 5rem 3.6rem;
+  display: flex;
+  justify-content: center;
 }
 
 .content {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  width: 100%;
+  gap: 20px;
   align-items: center;
+  background-color: var(--accent-color);
+  border-radius: 15px;
+  padding: 1rem; 
 }
 
 .form {
@@ -24,7 +28,7 @@
   border-radius: 50px;
   display: flex;
   align-items: center;
-  height: 3rem;
+  height: 3.5rem;
   padding: 0 0.5rem;
   
   input {
@@ -33,7 +37,7 @@
     border: none;
     height: 100%;
     margin-left: 5px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     &:focus {
       outline: none;
     }
@@ -43,7 +47,7 @@
 .text {
   color: var(--text-color);
   text-transform: uppercase;
-  font-size: clamp(2rem, -0.3704rem + 3.7037vw, 2.5rem);
+  font-size: clamp(1.5625rem, 1.2943rem + 1.1442vw, 3.125rem);
   font-weight: 800;
 }
 
@@ -52,8 +56,8 @@
   background-color: var(--bg-color);
   color: var(--accent-color);
   border: none;
-  height: 3rem;
-  font-size: 1rem;
+  height: 3.5rem;
+  font-size: 1.3rem;
   font-weight: bold;
   transition: background-color 0.3s ease, color 0.3s ease;
   &:hover {
