@@ -14,6 +14,9 @@ export default defineConfig({
     open: true,
     hmr: {
       overlay: false
+    },
+    proxy: {
+      "/images": "http://localhost:5000",
     }
   },
 })
