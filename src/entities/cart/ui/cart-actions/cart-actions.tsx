@@ -25,7 +25,6 @@ export const CartActions: FC<TCartActionsProps> = memo(
     onRemove,
     onAddToCart,
   }) => {
-    console.log(location);
     return (
       <div className={styles.cartActions}>
         <div className={styles.price}>
