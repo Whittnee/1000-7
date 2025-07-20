@@ -23,13 +23,14 @@
 - Спроектировал архитектуру приложения по FSD-подходу
 - Сконфигурировал и развернул backend на удалённом сервере
 - Реализовал тестовую онлайн оплату с помощью Stripe
+- Настроил адаптивную верстку под различные разрешения
 - Выстроил бизнес-логику с помощью Redux Toolkit
 - Сверстал компоненты с помощью React и настроил маршрутизацию
 - Приобрёл доменное имя и настроил сертификацию
 
 ## Технологии 
 
-- React, TypeScript, Redux Toolkit, SCSS, Swiper, Stripe, Vite, Express.js, Nginx
+- React, TypeScript, Redux Toolkit, SCSS, Framer Motion, Swiper, Stripe, Vite, Express.js, PostgreSQL, Docker, Nginx
 - использовал crypto.randomUUID для синхронизации корзины с сервером
 
 ## Инструкция по запуску
