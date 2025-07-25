@@ -1,0 +1,27 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  font-size: 1rem;
+  li:last-of-type {
+    pointer-events: none;
+    color: var(--accent-color);
+  }
+}
+
+.link {
+  color: var(--opacity-color);
+  cursor: pointer;
+  display: flex;
+  line-height: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  &:hover {
+    color: var(--accent-color);
+  }
+}
