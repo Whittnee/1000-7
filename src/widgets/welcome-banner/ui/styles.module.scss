@@ -1,0 +1,367 @@
+.welcomeBanner {
+  background-color: var(--bg-color);
+  margin: 0 auto;
+  display: flex;
+  max-width: 1700px;
+  padding: 0 40px;
+  align-items: center;
+  flex-direction: row;
+  gap: 50px;
+  width: 100%;
+  justify-content: space-between;
+  min-height: calc(100dvh - 80px);
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  justify-content: center;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 50px;
+  position: relative;
+}
+
+.arrow {
+  display: flex;
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  top: 0;
+  right: 25%;
+  animation: arrowWiggle 3s ease-in-out infinite;
+}
+
+@keyframes arrowWiggle {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(0deg);
+  }
+}
+
+.card {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  border-radius: 20px;
+  position: relative;
+  transition: transform 0.3s ease;
+  &.right {
+    margin-top: 125px;
+  }
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.ribbon {
+  position: absolute;
+  top: 25px;
+  left: -40px;
+  transform: rotate(-45deg);
+  background: black;
+  color: white;
+  font-size: 0.65rem;
+  padding: 4px 40px;
+  font-weight: 600;
+  z-index: 3;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.img {
+  max-width: 390px;
+  &.right {
+    max-width: 320px;
+  }
+}
+
+.stats {
+  display: flex;
+  flex-direction: row;
+  gap: 65px;
+}
+
+.h1 {
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 4.7rem;
+  line-height: 120%;
+}
+
+.text {
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 28px;
+  white-space: nowrap;
+}
+
+.strong {
+  font-weight: 600;
+  font-size: 2.1rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.shopButton {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  max-width: 180px;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: 56px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.checkoutButton {
+  background-color: var(--bg-color);
+  color: var(--accent-color);
+  max-width: 180px;
+  width: 100%;
+  text-transform: uppercase;
+  border: 1px solid var(--accent-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: 55px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.brMobile {
+  display: none;
+}
+
+.brDesktop {
+  display: inline;
+}
+
+@media (width <= 1920px) {
+  .img {
+    max-width: 340px;
+    &.right {
+      max-width: 290px;
+    }
+  }
+}
+
+@media (width <= 1440px) {
+  .welcomeBanner {
+    gap: 35px;
+  }
+  .information {
+    gap: 20px;
+  }
+  .h1 {
+    font-size: 3.7rem;
+  }
+  .text {
+    font-size: 0.95rem;
+  }
+  .left {
+    gap: 40px;
+  }
+  .checkoutButton,
+  .shopButton {
+    max-width: 140px;
+    font-size: 1rem;
+    height: 50px;
+  }
+  .img {
+    max-width: 290px;
+    &.right {
+      max-width: 250px;
+    }
+  }
+  .strong {
+    font-size: 1.5rem;
+  }
+}
+
+@media (width <= 1150px) {
+  .welcomeBanner {
+    padding: 0 20px;
+  }
+  .h1 {
+    font-size: 3.2rem;
+  }
+  .text {
+    font-size: 0.9rem;
+  }
+  .img {
+    max-width: 260px;
+    &.right {
+      max-width: 230px;
+    }
+  }
+  .strong {
+    font-size: 1.4rem;
+  }
+  .checkoutButton,
+  .shopButton {
+    max-width: 130px;
+    font-size: 0.95rem;
+    height: 45px;
+  }
+}
+
+@media (width <= 1055px) {
+  .welcomeBanner {
+    margin-top: 35px;
+    gap: 70px;
+    flex-direction: column;
+    justify-content: start;
+  }
+  .h1 {
+    text-align: center;
+    font-size: 3.7rem;
+  }
+  .text {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  .strong {
+    font-size: 2rem;
+  }
+
+  .information {
+    gap: 30px;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .stats {
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .checkoutButton,
+  .shopButton {
+    max-width: 140px;
+    font-size: 1rem;
+    height: 50px;
+  }
+}
+
+@media (width <= 600px) {
+  .card,
+  .checkoutButton,
+  .shopButton {
+    &:hover {
+      transform: none;
+    }
+  }
+  .h1 {
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  .text {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .strong {
+    font-size: 1.4rem;
+  }
+
+  .information {
+    gap: 20px;
+  }
+
+  .checkoutButton,
+  .shopButton {
+    max-width: 130px;
+    height: 45px;
+  }
+  .card {
+    &.right {
+      margin-top: 115px;
+    }
+  }
+  .images {
+    gap: 20px;
+  }
+  .arrow {
+    right: 15%;
+  }
+}
+
+@media (width <= 490px) {
+  .welcomeBanner {
+    padding: 0 15px;
+  }
+  .h1 {
+    line-height: 1.1;
+  }
+  .strong {
+    font-size: 1.3rem;
+  }
+  .brMobile {
+    display: inline;
+  }
+
+  .brDesktop {
+    display: none;
+  }
+
+  .arrow {
+    right: 10%;
+  }
+  .ribbon {
+    font-size: 0.5rem;
+    top: 15px;
+    left: -45px;
+  }
+  .text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (width <= 400px) {
+  .welcomeBanner {
+    padding: 0 10px;
+  }
+  .text {
+    font-size: 0.9rem;
+  }
+}
