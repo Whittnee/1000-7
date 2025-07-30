@@ -1,1 +1,0 @@
-export { InformationBanner } from "./ui/information-banner"
