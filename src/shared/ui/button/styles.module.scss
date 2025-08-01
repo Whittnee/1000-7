@@ -1,0 +1,17 @@
+.button {
+  border-radius: 50px;
+  background-color: var(--bg-color);
+  color: var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  height: 25px;
+  width: 25px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  &:disabled {
+    pointer-events: none;
+    background-color: rgba(16, 16, 16, 0.3);
+  }
+}
