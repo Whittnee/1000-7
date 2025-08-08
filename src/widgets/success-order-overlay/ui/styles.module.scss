@@ -1,0 +1,27 @@
+.successOrderOverlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.icon {
+  height: 125px;
+  width: 125px;
+  color: rgb(16, 196, 76);
+}
+
+.title {
+  color: var(--accent-color);
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.text {
+  color: var(--accent-color);
+  text-align: center;
+  font-weight: normal;
+  font-size: 1rem;
+}
