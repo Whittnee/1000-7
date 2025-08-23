@@ -1,7 +1,7 @@
-import { TPriceRangeProps } from "@/shared/ui/price-range/price-range-types";
+import { TPriceRangeProps } from "@/shared/ui/price-range/types";
 import { FC, memo } from "react";
 import { getTrackBackground, Range } from "react-range";
-import styles from "./price-range.module.scss";
+import styles from "./styles.module.scss";
 
 export const PriceRange: FC<TPriceRangeProps> = memo(({
   min,

@@ -1,6 +1,6 @@
-import { TColorSelectorProps } from "@/shared/ui/color-selector/color-selector-types";
+import { TColorSelectorProps } from "./types";
 import { FC, memo } from "react";
-import styles from "./color-selector.module.scss"
+import styles from "./styles.module.scss"
 import clsx from "clsx";
 import { FaCheck } from "react-icons/fa";
 
@@ -12,7 +12,7 @@ export const ColorSelector: FC<TColorSelectorProps> = memo(
     
     return (
       <div className={styles.colorSelector}>
-        {showTitle && <p className={styles.header}>Choose Color</p>}{" "}
+        {showTitle && <p className={styles.header}>Choose Color</p>}
         <div className={styles.options}>
           {colors.map((color) => (
             <label
