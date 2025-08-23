@@ -1,13 +1,14 @@
-import { TSwitcherProps } from "@/shared/ui/switcher/switcher-types";
+import { TSwitcherProps } from "./types";
 import clsx from "clsx";
 import { FC, memo } from "react";
-import styles from "./switcher.module.scss"
+import styles from "./styles.module.scss"
 
 export const Switcher: FC<TSwitcherProps> = memo(({
   category,
   selectedCategory,
   setSelectedCategory,
 }) => {
+  
   const handleClick = (string: string) => {
     setSelectedCategory((prev) => (prev === string ? "" : string));
   };

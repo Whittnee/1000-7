@@ -1,7 +1,7 @@
-import { TPreloaderProps } from "@/shared/ui/preloader/preloader-types"
+import { TPreloaderProps } from "./types"
 import clsx from "clsx"
 import { FC, memo } from "react"
-import styles from "./preloader.module.scss"
+import styles from "./styles.module.scss"
 
 export const Preloader: FC<TPreloaderProps> = memo(({size = 'small'}) => {
   return (

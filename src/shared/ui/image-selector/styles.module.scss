@@ -1,0 +1,29 @@
+.imageSelector {
+  gap: 10px;
+  width: 100%;
+  display: grid;
+  &.row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &.column {
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
+.image {
+  width: 140px;
+  border-radius: 15px;
+  cursor: pointer;
+  outline: 1px solid transparent;
+  transition: outline 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  &.active {
+    outline: 1px solid var(--accent-color);
+  }
+}
+
+.emptyImage {
+  width: 140px;
+  aspect-ratio: 1/1;
+} 
+

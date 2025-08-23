@@ -2,5 +2,5 @@ export type TPriceProps = {
   price: number;
   discount: number | null;
   discountedPrice: number;
-  size?: "small" | "medium";
+  size?: "small" | "medium" | "big";
 };

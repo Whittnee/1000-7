@@ -1,6 +1,6 @@
 import { FC, memo } from "react"; 
-import { TSizeSelectorProps } from "@/shared/ui/size-selector/size-selector-types";
-import styles from "./size-selector.module.scss"
+import { TSizeSelectorProps } from "@/shared/ui/size-selector/types";
+import styles from "./styles.module.scss"
 import clsx from "clsx";
 
 export const SizeSelector: FC<TSizeSelectorProps> = memo(
