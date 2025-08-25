@@ -1,11 +1,11 @@
 import { RootState } from "@/entities/store";
 import { createSelector } from "@reduxjs/toolkit";
 
-export const selectClothes = (state: RootState) => state.clothesReducer.clothes;
-export const selectClothesByNew = createSelector([selectClothes], (clothes) =>
+export const selectProducts = (state: RootState) => state.productsReducer.products;
+export const selectProductsByNew = createSelector([selectProducts], (clothes) =>
   clothes.filter((clothes) => clothes.isNew)
 );
-export const selectClothesByPopular = createSelector(
-  [selectClothes],
-  (clothes) => clothes.filter((clothes) => clothes.popular)
+export const selectProductsByPopular = createSelector(
+  [selectProducts],
+  (products) => products.filter((product) => product.popular)
 );

@@ -1,5 +1,6 @@
-export { default as clothesReducer } from "./model/clothesSlice"
+export { default as productsReducer } from "./model/productsSlice"
 export * from "./model/selectors"
 export { ClothesCard } from "./ui/clothes-card/clothes-card"
+export { SearchCard } from "./ui/search-card/search-card"
 export { useClothesFilters } from "./hooks/useClothesFilters"
 export { useClothes } from  "./hooks/useClothes"

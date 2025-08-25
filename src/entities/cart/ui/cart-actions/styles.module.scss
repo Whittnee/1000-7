@@ -1,11 +1,11 @@
 .cartActions {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
   box-shadow: 0 0 8px #ddd;
   border-radius: 15px;
-  padding: 1rem 1rem;
-  max-width: 385px;
+  padding: 10px 15px;
+  max-width: 365px;
   width: 100%;
 }
 
@@ -30,65 +30,63 @@
 .actions {
   display: flex;
   flex-direction: column;
-  gap: 20px
+  gap: 15px;
 }
 
 .buttons {
   display: flex;
   flex-direction: row;
-  gap: 0.5vw;
+  gap: 5px;
   width: 100%;
 }
 
 .cartButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: rgb(16, 196, 76);
-  height: 2.75rem;
-  border-radius: 50px;
-  width: 100%;
   color: var(--text-color);
-  font-size: 1.2rem;
-  font-weight: normal;
-  transition: background-color 0.3s ease;
-  &:hover {
-    background-color: rgb(16, 196, 76, 0.8);
+  width: 100%;
+  &.big {
+    height: 45px;
+    font-size: 1.2rem;
+  }
+  &.medium {
+    height: 40px;
+    font-size: 1.1rem;
   }
 }
 
 .removeButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: rgb(202, 34, 34);
   color: var(--text-color);
-  height: 2.75rem;
   width: 100%;
-  border-radius: 50px;
-  transition: background-color 0.3s ease;
-  font-size: 1.2rem;
-  &:hover {
-    background-color: rgb(202, 34, 34, 0.8);
+  &.big {
+    height: 45px;
+    width: 100%;
+    font-size: 1.2rem;
+  }
+  &.medium {
+    height: 40px;
+    font-size: 1.1rem;
   }
 }
 
 .addButton {
   background-color: var(--accent-color);
   color: var(--text-color);
-  border-radius: 50px;
-  height: 2.75rem;
   width: 100%;
-  font-size: 1.2rem;
-  transition: background-color 0.3s ease;
-  &:hover {
-    background-color: var(--accent-hover-color);
+  &.big {
+    height: 45px;
+    width: 100%;
+    font-size: 1.2rem;
+  }
+  &.medium {
+    height: 40px;
+    font-size: 1.1rem;
   }
 }
 
 .error {
   color: red;
-  font-size: 1rem;
+  font-size: 16px;
   display: none;
   &.active {
     display: block;
@@ -99,4 +97,16 @@
   color: var(--accent-color);
   font-weight: bold;
   overflow-wrap: break-word;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .addButton:hover {
+    background-color: var(--accent-hover-color);
+  }
+  .removeButton:hover {
+    background-color: rgb(202, 34, 34, 0.8);
+  }
+  .cartButton:hover {
+    background-color: rgb(16, 196, 76, 0.8);
+  }
 }

@@ -1,5 +1,6 @@
 import { cartReducer } from "@/entities/cart";
-import { clothesReducer } from "@/entities/clothes";
+import { productsReducer } from "@/entities/clothes";
+import { overlayReducer } from "@/entities/overlay";
 import { productReducer } from "@/entities/product";
 import { reviewsReducer } from "@/entities/reviews";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
@@ -9,10 +10,11 @@ import {
   TypedUseSelectorHook,
 } from 'react-redux'
 export const rootReducer = combineReducers({
-  clothesReducer,
+  productsReducer,
   reviewsReducer,
   cartReducer,
-  productReducer
+  productReducer,
+  overlayReducer
 })
 
 const store = configureStore({

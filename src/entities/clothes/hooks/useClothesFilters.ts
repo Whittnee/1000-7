@@ -1,8 +1,8 @@
-import { TSlicedClothes } from "@/shared/types/clothes";
+import { TSlicedProduct } from "@/shared/types/products";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 
-export const useClothesFilters = (clothes: TSlicedClothes[]) => {
+export const useClothesFilters = (clothes: TSlicedProduct[]) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState<string>(
     searchParams.get("category") || ""
@@ -22,9 +22,9 @@ export const useClothesFilters = (clothes: TSlicedClothes[]) => {
   const [tempPrices, setTempPrices] = useState<number[]>(prices);
   const [tempSize, setTempSize] = useState<string>(selectedSize);
   const [tempColor, setTempColor] = useState<string>(selectedColor);
-  const [filteredClothes, setFilteredClothes] = useState<TSlicedClothes[]>([]);
+  const [filteredClothes, setFilteredClothes] = useState<TSlicedProduct[]>([]);
 
-  const applyFilters = (clothes: TSlicedClothes[]) => {
+  const applyFilters = (clothes: TSlicedProduct[]) => {
     return clothes.filter((item) => {
       const priceMatch =
         item.price >= tempPrices[0] && item.price <= tempPrices[1];

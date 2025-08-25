@@ -1,15 +1,31 @@
 .cartCard {
   display: flex;
   flex-direction: row;
-  gap: 15px;
-  padding: 1.5rem 0;
+  padding: 20px 0;
+  width: 100%;
+  &.big {
+    gap: 15px;
+  }
+  &.medium {
+    gap: 10px;
+  }
+  &.small {
+    gap: 5px;
+  }
 }
 
-.img {
-  width: 10rem;
-  height: 10rem;
+img.img {
   border-radius: 10px;
-  object-fit: cover;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  &.big {
+    width: 150px;
+  }
+  &.medium {
+    width: 120px;
+  }
+  &.small {
+    width: 95px;
+  }
 }
 
 .content {
@@ -17,7 +33,15 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  gap: 20px;
+  &.big {
+    gap: 15px;
+  }
+  &.medium {
+    gap: 10px;
+  }
+  &.small {
+    gap: 5px;
+  }
 }
 
 .info {
@@ -27,15 +51,34 @@
 }
 
 .name {
-  font-size: 1.4rem;
   font-weight: bold;
+  line-height: 1.2;
+  white-space: nowrap;
   color: var(--accent-color);
+  &.big {
+    font-size: 1.4rem;
+  }
+  &.medium {
+    font-size: 1.2rem;
+  }
+  &.small {
+    font-size: 0.9rem;
+  }
 }
 
 .option {
   font-size: 1rem;
   font-weight: normal;
   color: var(--accent-color);
+  &.big {
+    font-size: 1rem;
+  }
+  &.medium {
+    font-size: 0.95rem;
+  }
+  &.small {
+    font-size: 0.8rem;
+  }
   span {
     color: var(--opacity-color);
   }
@@ -60,7 +103,7 @@
   color: var(--basket-color);
   transition: color 0.3s ease;
   &:hover {
-    color: var(--basket-hover-color)
+    color: var(--basket-hover-color);
   }
   svg {
     width: 1.2rem;

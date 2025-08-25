@@ -1,4 +1,4 @@
-import { TCartActionsProps } from "@/entities/cart/ui/cart-actions/cart-actions-types";
+import { TCartActionsProps } from "./types";
 import { Counter } from "@/shared/ui/counter";
 import { Preloader } from "@/shared/ui/preloader";
 import { Price } from "@/shared/ui/price";
@@ -6,12 +6,14 @@ import { Separator } from "@/shared/ui/separator";
 import { FC, memo } from "react";
 import { IoReloadCircle } from "react-icons/io5";
 import { Link } from "react-router";
-import styles from "./cart-actions.module.scss";
 import clsx from "clsx";
+import { Button } from "@/shared/ui/button";
+import styles from "./styles.module.scss";
 
 export const CartActions: FC<TCartActionsProps> = memo(
   ({
     price,
+    size,
     discountedPrice,
     discount,
     location,
@@ -24,21 +26,19 @@ export const CartActions: FC<TCartActionsProps> = memo(
     onDecrement,
     onRemove,
     onAddToCart,
+    className,
+    ...otherProps
   }) => {
     return (
-      <div className={styles.cartActions}>
-        <div className={styles.price}>
-          <Price
-            price={price}
-            discount={discount}
-            discountedPrice={discountedPrice}
-            size="medium"
-          />
-          <p></p>
-        </div>
+      <div className={clsx(styles.cartActions, className)} {...otherProps}>
+        <Price
+          price={price}
+          discount={discount}
+          discountedPrice={discountedPrice}
+          size={size}
+        />
         <p className={styles.p}>
           <IoReloadCircle
-            className={styles.icon}
             style={{ color: "var(--discount-color)" }}
           />{" "}
           Free 10-day returns
@@ -50,34 +50,35 @@ export const CartActions: FC<TCartActionsProps> = memo(
             <>
               <div className={styles.buttons}>
                 <Link to="/cart" style={{ width: "50%", display: "block" }}>
-                  <button className={styles.cartButton} type="button">
-                    To the Cart
-                  </button>
+                  <Button
+                    className={clsx(styles.cartButton, styles[size])}
+                    type="button"
+                    label="To the Cart"
+                  />
                 </Link>
                 <Counter
+                  style={{ width: "50%" }}
                   count={quantity}
                   increment={onIncrement}
                   decrement={onDecrement}
-                  size="medium"
+                  size={size}
                 />
               </div>
-              <button
-                className={styles.removeButton}
+              <Button
+                className={clsx(styles.removeButton, styles[size])}
                 type="button"
                 onClick={onRemove}
-              >
-                Remove from Cart
-              </button>
+                label="Remove from Cart"
+              />
             </>
           ) : (
             <>
-              <button
-                className={styles.addButton}
+              <Button
+                className={clsx(styles.addButton, styles[size])}
                 type="button"
                 onClick={onAddToCart}
-              >
-                Add to Cart
-              </button>
+                label="Add to Cart"
+              />
               <p
                 className={clsx(styles.error, {
                   [styles.active]: isMissing.length > 0,
@@ -89,9 +90,9 @@ export const CartActions: FC<TCartActionsProps> = memo(
           )}
         </div>
         <Separator />
-        {Object.keys(location!).length > 0 && (
+        {location && Object.keys(location).length > 0 && (
           <span className={styles.span}>
-            {location?.country}, {location?.city}
+            {location.country}, {location.city}
           </span>
         )}
         <p className={styles.p}>
@@ -100,6 +101,7 @@ export const CartActions: FC<TCartActionsProps> = memo(
             {today} - {deliveryDate}
           </span>
         </p>
+        <p className={styles.p}>Payment: <span className={styles.span}>Secure Transaction</span></p>
       </div>
     );
   }

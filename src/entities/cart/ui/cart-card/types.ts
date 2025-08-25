@@ -1,9 +1,10 @@
 export type TCartCardProps = {
+  size: 'small' | 'medium' | 'big';
   id: number;
   name: string;
   images: string[];
-  size: string;
-  color: string;
+  selectedSize: string;
+  selectedColor: string;
   quantity: number;
   price: number;
   discountedPrice: number;
