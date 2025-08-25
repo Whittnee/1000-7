@@ -1,5 +1,5 @@
 import { addToCart, getCart, removeFromCart, updateItemCount } from "@/shared/api/cart";
-import { TCartResponse, TUpdateCart } from "@/shared/types/cart";
+import { TCartResponse, TCartUpdate } from "@/shared/types/cart";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const getCartThunk = createAsyncThunk(
@@ -9,7 +9,7 @@ export const getCartThunk = createAsyncThunk(
 
 export const addToCartThunk = createAsyncThunk(
   "cart/addToCart",
-  async (data: TUpdateCart & { size: string, color: string}, { dispatch }) => {
+  async (data: TCartUpdate & { size: string, color: string}, { dispatch }) => {
     await addToCart(data);
     return dispatch(getCartThunk(data.userId)).unwrap();
   }
@@ -17,7 +17,7 @@ export const addToCartThunk = createAsyncThunk(
 
 export const removeFromCartThunk = createAsyncThunk(
   "cart/removeFromCart",
-  async (data: TUpdateCart, { dispatch }) => {
+  async (data: TCartUpdate, { dispatch }) => {
     await removeFromCart(data);
     return dispatch(getCartThunk(data.userId)).unwrap();
   }
@@ -25,7 +25,7 @@ export const removeFromCartThunk = createAsyncThunk(
 
 export const updateItemCountThunk = createAsyncThunk(
   "cart/updateItemCount",
-  async (data: TUpdateCart & { quantity: number }, { dispatch }) => {
+  async (data: TCartUpdate & { quantity: number }, { dispatch }) => {
     await updateItemCount(data);
     return dispatch(getCartThunk(data.userId)).unwrap();
   }
@@ -36,7 +36,7 @@ interface ICartState extends TCartResponse {
 }
 
 const initialState: ICartState = {
-  clothes: [],
+  products: [],
   totalPrices: {
     subtotal: 0,
     total: 0,
@@ -60,7 +60,7 @@ const cartSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(getCartThunk.fulfilled, (state, action) => {
-        state.clothes = action.payload.clothes;
+        state.products = action.payload.products;
         state.totalPrices = action.payload.totalPrices;
         state.isLoading = false;
       })

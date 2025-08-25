@@ -1,5 +1,5 @@
 import { getProduct } from "@/shared/api/product";
-import { TClothes } from "@/shared/types/clothes";
+import { TProduct } from "@/shared/types/products";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const getProductThunk = createAsyncThunk(
@@ -8,7 +8,7 @@ export const getProductThunk = createAsyncThunk(
 )
 
 interface IProductState {
-  product: TClothes | null;
+  product: TProduct | null;
   isLoading: boolean;
 }
 

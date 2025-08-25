@@ -1,24 +1,24 @@
-import { getProducts } from "@/shared/api/clothes";
-import { TSlicedClothes } from "@/shared/types/clothes";
+import { getProducts } from "@/shared/api/product";
+import { TSlicedProduct } from "@/shared/types/products";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const getProductsThunk = createAsyncThunk(
-  "clothes/getProducts",
+  "products/getProducts",
   async () => getProducts()
 )
 
-interface IClothesState {
-  clothes: TSlicedClothes[];
+interface IProductsState {
+  products: TSlicedProduct[];
   isLoading: boolean
 }
 
-const initialState: IClothesState = {
-  clothes: [],
+const initialState: IProductsState = {
+  products: [],
   isLoading: false
 };
 
-const clothesSlice = createSlice({
-  name: "clothes",
+const productsSlice = createSlice({
+  name: "products",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -31,10 +31,10 @@ const clothesSlice = createSlice({
         console.log(action.error.message)
       })
       .addCase(getProductsThunk.fulfilled, (state, action) => {
-        state.clothes = action.payload
+        state.products = action.payload
         state.isLoading = false;
       })
   }
 });
 
-export default clothesSlice.reducer;
+export default productsSlice.reducer;

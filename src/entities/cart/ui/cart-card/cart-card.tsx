@@ -1,18 +1,20 @@
 import { FC, memo } from "react";
-import styles from "./cart-card.module.scss"
+import styles from "./styles.module.scss";
 import { Link } from "react-router";
 import { Price } from "@/shared/ui/price";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { Counter } from "@/shared/ui/counter";
-import { TCartCardProps } from "@/entities/cart/ui/cart-card/cart-card-types";
-
+import { TCartCardProps } from "./types";
+import { Image } from "@/shared/ui/image";
+import clsx from "clsx";
 export const CartCard: FC<TCartCardProps> = memo(
   ({
     id,
+    size = 'medium',
     name,
     images,
-    size,
-    color,
+    selectedSize,
+    selectedColor,
     quantity,
     price,
     discountedPrice,
@@ -22,47 +24,41 @@ export const CartCard: FC<TCartCardProps> = memo(
     onRemove,
   }) => {
     return (
-      <li className={styles.cartCard}>
+      <div className={clsx(styles.cartCard, styles[size])}>
         <Link to={`/clothes/${id}`}>
-          <img className={styles.img} src={images[0]} alt={name} />
+          <Image className={clsx(styles.img, styles[size])} src={images[0]} alt={name} />
         </Link>
-        <div className={styles.content}>
+        <div className={clsx(styles.content, styles[size])}>
           <div className={styles.info}>
             <div>
-              <h3 className={styles.name}>{name}</h3>
-              <p className={styles.option}>
-                Size: <span>{size}</span>
+              <h3 className={clsx(styles.name, styles[size])}>{name}</h3>
+              <p className={clsx(styles.option, styles[size])}>
+                Size: <span>{selectedSize}</span>
               </p>
-              <p className={styles.option}>
-                Color: <span>{color}</span>
+              <p className={clsx(styles.option, styles[size])}>
+                Color: <span>{selectedColor}</span>
               </p>
             </div>
-            <div className={styles.price}>
-              <Price
-                price={price * quantity}
-                discount={discount}
-                discountedPrice={discountedPrice * quantity}
-                size="small"
-              />
-            </div>
+            <Price
+              price={price * quantity}
+              discount={discount}
+              discountedPrice={discountedPrice * quantity}
+              size={size === 'big' ? 'medium' : size}
+            />
           </div>
           <div className={styles.actions}>
-            <button
-              className={styles.button}
-              type="button"
-              onClick={onRemove}
-            >
+            <button className={styles.button} type="button" onClick={onRemove}>
               <FaRegTrashAlt />
             </button>
             <Counter
               count={quantity}
               increment={onIncrement}
               decrement={onDecrement}
-              size="small"
+              size={size === 'big' ? 'medium' : size}
             />
           </div>
         </div>
-      </li>
-    )
+      </div>
+    );
   }
 );

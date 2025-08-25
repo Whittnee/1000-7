@@ -1,0 +1,23 @@
+.searchCard {
+  padding: 13px 16px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.image {
+  width: 32px;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.name {
+  font-size: 1rem;
+  color: var(--accent-color)
+}

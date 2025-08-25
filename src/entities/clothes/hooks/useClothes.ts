@@ -1,4 +1,4 @@
-import { getProductsThunk } from "@/entities/clothes/model/clothesSlice";
+import { getProductsThunk } from "@/entities/clothes/model/productsSlice";
 import { useDispatch } from "@/entities/store";
 import { useEffect } from "react";
 

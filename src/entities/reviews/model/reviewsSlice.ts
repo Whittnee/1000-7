@@ -10,8 +10,7 @@ const initialState: IReviewsState = {
     {
       id: 1,
       name: "Трёхпроцентная сгущёнка",
-      image:
-        "https://static.insales-cdn.com/images/products/1/3583/395455999/Сгущёнка.jpg",
+      image: "https://i.ibb.co/8nGr1MzC/2025-07-22-001945708.png",
       rating: 5,
       comment:
         "The delivery is incredibly quick, it arrives before even I can be spoiled.",
@@ -37,8 +36,7 @@ const initialState: IReviewsState = {
     {
       id: 4,
       name: "Игра 12+, уроды",
-      image:
-        "https://i.ibb.co/zW96Pb3V/2025-03-28-071318721.png",
+      image: "https://i.ibb.co/zW96Pb3V/2025-03-28-071318721.png",
       rating: 4.7,
       comment: "I love this website! It's so easy to find clothes I want.",
       postedOn: "December 15, 2024",
@@ -72,40 +70,42 @@ const initialState: IReviewsState = {
     {
       id: 8,
       name: "Представитель северной столицы",
-      image:
-        "https://i.ibb.co/v4ZqjsHV/2025-03-28-071046765.png",
+      image: "https://i.ibb.co/v4ZqjsHV/2025-03-28-071046765.png",
       rating: 2.5,
       comment: "I'd rather buy a beer than this garbage.",
       postedOn: "March 2, 2025",
     },
     {
       id: 9,
-      name: "Bóbr Kurwa",
-      image: "https://cdn.fishki.net/upload/post/201510/02/1682713/bobr4.jpg",
-      rating: 4,
-      comment:
-        "ja pierdolę patrzcie co spotkałem! bóbr kurwa! ja pierdolę! jakie bydlę! bober! ej, kurwa, bober! bober, nie spierdalaj, mordo! chodź ty, kurwo, do mnie! bober! ale jesteś kurwa duży, ty! bober! ja pierdolę, pierwszy raz w życiu widzę bobra! jakie bydlę jebane! spierdolił do wody i się utopił!",
-      postedOn: "December 21, 2024",
+      name: "Empthy.",
+      image: "https://i.ibb.co.com/Q315GMJ8/image-2025-04-03-151009406.png",
+      rating: 4.5,
+      comment: `Avacado Pajamas fits exelent and the quality is good enough.`,
+      postedOn: "January 18, 2025",
+    },
+    // {
+      //   id: 11,
+      //   name: "1C «Программист»",
+      //   image:
+      //     "https://i.ibb.co.com/Q315GMJ8/image-2025-04-03-151009406.png",
+      //   rating: 4.3,
+      //   comment: `Who the fuck cares, if you're coding on 1C crap`,
+      //   postedOn: "June 18, 2025",
+      // },
+      {
+      id: 10,
+      name: ".NET + PHP enjoyer",
+      image: "https://liamhammett.com/images/articles/dead-elephpant.svg",
+      rating: 3.1,
+      comment: `PHP НЕ СЧИТАЕМ ЗА ОПЫТ`,
+      postedOn: "June 13, 2025",
     },
     {
       id: 11,
       name: "Фанат Безрукова",
-      image:
-        "https://i.ibb.co.com/GfF9kC6N/image-2025-04-03-150205176.png",
-      rating: 5,
-      comment: `This store is so cool that I'm going to let you use my card to shop here. Here are the credits: 
-      4242 4242 4242 4242 
-      09/27 228 
-      Paster Mack`,
-      postedOn: "January 18, 2025",
-    },
-    {
-      id: 10,
-      name: "Empthy.",
-      image:
-        "https://i.ibb.co.com/Q315GMJ8/image-2025-04-03-151009406.png",
-      rating: 4.5,
-      comment: `Avacado Pajamas fits exelent and the quality is good enough.`,
+      image: "https://i.ibb.co.com/GfF9kC6N/image-2025-04-03-150205176.png",
+      rating: 2,
+      comment: 'На-ду-ли, просто нагло обманули',
       postedOn: "January 18, 2025",
     },
   ],

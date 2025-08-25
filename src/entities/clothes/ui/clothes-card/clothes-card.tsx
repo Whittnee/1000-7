@@ -1,53 +1,33 @@
-import { TSlicedClothes } from "@/shared/types/clothes";
-import { FC, memo, useEffect, useState } from "react";
+import { FC, memo } from "react";
 import { Link } from "react-router";
-import { motion } from "framer-motion"
 import { StarsRaiting } from "@/shared/ui/stars-raiting";
 import { Price } from "@/shared/ui/price";
-import styles from "./clothes-card.module.scss"
+import styles from "./styles.module.scss";
+import { Image } from "@/shared/ui/image";
+import { TClothesCardProps } from "@/entities/clothes/ui/clothes-card/types";
+import clsx from "clsx";
 
-export const ClothesCard: FC<TSlicedClothes> = memo(
-  ({ id, name, price, image, rating, discount, discountedPrice  }) => {
-    const [isFirstRender] = useState(() => {
-      return sessionStorage.getItem(`isFirstRender-${id}`) !== "true";
-    });
-
-    useEffect(() => {
-      if(isFirstRender) {
-        sessionStorage.setItem(`isFirstRender-${id}`, "true");
-      }
-    }, [isFirstRender, id])
+export const ClothesCard: FC<TClothesCardProps> = memo(
+  ({ size, id, name, price, image, rating, discount, discountedPrice }) => {
     return (
-      <motion.li
-        className={styles.clothes}
-        initial={isFirstRender ? { opacity: 0, y: 50 } : false}
-        whileInView={{ opacity: 1, y: 0 }}
-        whileHover={{ scale: 1.05 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{
-          opacity: { duration: 0.5, ease: "easeInOut" },
-          y: { duration: 0.5, ease: "easeInOut" },
-        }}
-      >
+      <div className={clsx(styles.card, styles[size])}>
         <Link to={`/clothes/${id}`}>
           <div className={styles.info}>
-            <img className={styles.img} src={image} alt={name} />
+            <Image className={styles.img} src={image} alt={name} />
             <h3 className={styles.h3}>{name}</h3>
           </div>
         </Link>
-        <div className={styles.container}>
+        <div className={styles.raiting}>
           <StarsRaiting rating={rating} className={styles.star} />
-          <p className={styles.raiting}>{rating}/5</p>
+          <p className={styles.number}>{rating}/5</p>
         </div>
-        <div className={styles.price}>
-          <Price
-            price={price}
-            discount={discount}
-            discountedPrice={discountedPrice}
-            size="small"
-          />
-        </div>
-      </motion.li>
+        <Price
+          price={price}
+          discount={discount}
+          discountedPrice={discountedPrice}
+          size={size === "big" ? "medium" : size === "medium" ? "small" : size}
+        />
+      </div>
     );
   }
 );

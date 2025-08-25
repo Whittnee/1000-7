@@ -1,17 +1,17 @@
-.review {
+.reviewCard {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 25px;
   border: 1px solid var(--border-opacity-color);
   border-radius: 15px;
-  padding: 1.75rem 2rem;
+  padding: 25px 30px;
   height: 100%;
 }
 
 .star {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 24px;
+  width: 24px;
 }
 
 .content {
@@ -28,8 +28,8 @@
 }
 
 .img {
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 45px;
+  height: 45px;
   border-radius: 50px;
   object-fit: cover;
 }
@@ -40,10 +40,17 @@
   color: var(--accent-color)
 }
 
+.nameWithIcon {
+  display: inline;
+  white-space: normal;
+}
+
 .checkMark {
   color: rgb(16, 196, 76);
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  vertical-align: -0.15em
 }
 
 .comment {
@@ -55,10 +62,18 @@
 
 .postedOn {
   font-weight: normal;
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: rgb(0, 0, 0, 0.7);
 }
 
+@media (width <= 425px) {
+  .review {
+    padding: 20px;
+  }
+  .name {
+    font-size: 1.1rem;
+  }
+}
 
 
 
