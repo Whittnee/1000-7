@@ -1,9 +1,14 @@
 import { checkResponse } from "@/shared/api";
 import { API_URL } from "@/shared/config/env";
-import { TClothes } from "@/shared/types/clothes";
+import { TProduct, TSlicedProduct } from "@/shared/types/products";
 
 
-export const getProduct = async (productId: number): Promise<TClothes> => {
+export const getProducts = async (): Promise<TSlicedProduct[]> => {
+  const res = await fetch(`${API_URL}/products`);
+  return checkResponse<TSlicedProduct[]>(res);
+};
+
+export const getProduct = async (productId: number): Promise<TProduct> => {
   const res = await fetch(`${API_URL}/products/${productId}`);
-  return checkResponse<TClothes>(res);
+  return checkResponse<TProduct>(res);
 };
