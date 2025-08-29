@@ -1,5 +1,5 @@
 import { checkResponse } from "@/shared/api";
-import { TCartResponse, TUpdateCart } from "@/shared/types/cart";
+import { TCartResponse, TCartUpdate } from "@/shared/types/cart";
 import { API_URL } from "@/shared/config/env";
 
 export const getCart = async (userId: string): Promise<TCartResponse> => {
@@ -20,7 +20,7 @@ export const clearCart = async(userId: string): Promise<void> => {
   }
 }
 
-export const addToCart = async (data: TUpdateCart & { size: string, color: string}): Promise<void> => {
+export const addToCart = async (data: TCartUpdate & { size: string, color: string}): Promise<void> => {
   const res = await fetch(`${API_URL}/cart`, {
     method: "POST",
     headers: {
@@ -34,7 +34,7 @@ export const addToCart = async (data: TUpdateCart & { size: string, color: strin
   }
 };
 
-export const removeFromCart = async (data: TUpdateCart): Promise<void> => {
+export const removeFromCart = async (data: TCartUpdate): Promise<void> => {
   const res = await fetch(`${API_URL}/cart`, {
     method: "DELETE",
     headers: {
@@ -48,7 +48,7 @@ export const removeFromCart = async (data: TUpdateCart): Promise<void> => {
   }
 };
 
-export const updateItemCount = async(data: TUpdateCart & { quantity: number }): Promise<void> => {
+export const updateItemCount = async(data: TCartUpdate & { quantity: number }): Promise<void> => {
   const res = await fetch(`${API_URL}/cart`, {
     method: "PATCH",
     headers: {

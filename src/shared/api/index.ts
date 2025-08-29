@@ -1,3 +1,8 @@
-export const checkResponse = <T>(res: Response): Promise<T> => {
-  return res.ok ? res.json() : res.json().then((err) => Promise.reject(err));
-};
+export const checkResponse = async <T>(res: Response): Promise<T> => {
+  const response = await res.json();
+  
+  if(!res.ok) {
+    throw new Error(response?.message || 'Ошибка запроса')
+  }
+  return response
+}
