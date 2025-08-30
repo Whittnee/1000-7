@@ -1,0 +1,16 @@
+.productPage {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+}
+
+.preloader {
+  display: flex;
+  min-height: calc(100dvh - 80px);
+}

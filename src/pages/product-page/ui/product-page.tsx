@@ -2,11 +2,12 @@ import { FC, useEffect } from "react";
 import { ProductCard } from "@/widgets/product-card/ui/product-card";
 import { ProductTabs } from "@/widgets/product-tabs";
 import { useParams } from "react-router";
+import styles from "./styles.module.scss";
 import { useDispatch, useSelector } from "@/entities/store";
 import { selectIsLoadingProduct, selectProduct } from "@/entities/product";
 import { getProductThunk } from "@/entities/product/model/productSlice";
 import { Preloader } from "@/shared/ui/preloader";
-import { MightLike } from "@/widgets/might-like";
+import { MightLikeSection } from "@/widgets/might-like-section";
 
 export const ProductPage: FC = () => {
   const { id } = useParams();
@@ -18,27 +19,19 @@ export const ProductPage: FC = () => {
     dispatch(getProductThunk(Number(id)));
   }, [id, dispatch]);
 
-  if (!clothes || loadingProduct) {
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "70vh",
-        }}
-      >
-        <Preloader size="big" />
-      </div>
-    );
-  }
   return (
-    <>
-      <section>
-        <ProductCard {...clothes} />
-        <ProductTabs />
-      </section>
-      <MightLike />
-    </>
+    <div className={styles.productPage}>
+      {!clothes || loadingProduct ? (
+        <div className={styles.preloader}>
+          <Preloader size="big" />
+        </div>
+      ) : (
+        <div className={styles.product}>
+          <ProductCard {...clothes} />
+          <ProductTabs />
+          <MightLikeSection />
+        </div>
+      )}
+    </div>
   );
 };
