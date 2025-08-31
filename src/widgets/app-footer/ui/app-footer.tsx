@@ -1,17 +1,18 @@
 import { FC } from "react";
-import styles from "./app-footer.module.scss"
+import styles from "./styles.module.scss"
 import { FaApplePay, FaGithub, FaGooglePay, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Separator } from "@/shared/ui/separator";
 import { RiVisaLine } from "react-icons/ri";
 import { SiMastercard } from "react-icons/si";
+import { LogoButtonFeature } from "@/features/logo-button-feature";
 
 export const AppFooter: FC = () => {
   return (
     <footer className={styles.footer}>
-      <section className={styles.content}>
+      <section className={styles.top}>
         <div className={styles.info}>
-          <h3 className={styles.logo}>1000-7</h3>
+          <LogoButtonFeature action={false}/>
           <span className={styles.text}>
             We have clothes that suits your ghoul style and which you're proud
             to wear.

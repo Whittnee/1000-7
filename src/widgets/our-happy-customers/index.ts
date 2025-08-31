@@ -1,1 +1,1 @@
-export { OurHappyCustomers } from "./ui/our-happy-customers" 
+export { OurHappyCustomers } from "./ui/our-happy-customers";

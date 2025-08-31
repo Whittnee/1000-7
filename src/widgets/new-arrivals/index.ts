@@ -1,1 +1,0 @@
-export { NewArrivals } from "./ui/new-arrivals"

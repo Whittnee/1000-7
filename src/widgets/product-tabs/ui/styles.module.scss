@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding: 0 3.6rem;
+  padding: 0 57px;
 }
 
 .tabs {
@@ -52,7 +52,6 @@
   color: var(--opacity-color);
   font-size: 1rem;
   font-weight: normal;
-  padding-top: 2.5px;
 }
 
 .reviews {
@@ -61,6 +60,25 @@
   gap: 20px
 }
 
+@media (width <= 1270px) {
+  .productTabs {
+    padding: 0 15px;
+  }
+}
 
+@media (width <= 900px) {
+  .reviews {
+    gap: 15px;
+  }
+}
+
+@media (width <= 845px) {
+  .productTabs {
+    padding: 0 10px;
+  }
+  .reviews {
+    grid-template-columns: repeat(1, 1fr);
+  } 
+}
 
 

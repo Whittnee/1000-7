@@ -1,0 +1,147 @@
+.catalog {
+  padding: 0 57px;
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 24px;
+}
+
+.productsFilters {
+  margin-top: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  margin-bottom: 64px;
+  align-items: center;
+  &.mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.icon {
+  width: 30px;
+  cursor: pointer;
+  height: 30px;
+  color: var(--accent-color);
+  transition: color 0.3s ease;
+  &:hover {
+    color: var(--accent-hover-color);
+  }
+}
+
+.title {
+  justify-self: center;
+  line-height: 1;
+  font-size: 3rem;
+  color: var(--accent-color);
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 40px;
+}
+
+.mobileOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+}
+
+.mobileDropdown {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  position: relative;
+  background-color: white;
+  width: 100%;
+  height: 90%;
+  padding-top: 38px;
+  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (width <= 2210px) {
+  .products {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (width <= 1910px) {
+  .products {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (width <= 1610px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  .catalog {
+    padding: 0 20px;
+  }
+}
+
+@media (width <= 1230px) {
+  .products {
+    gap: 20px;
+  }
+}
+
+@media (width <= 980px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .header {
+    margin-bottom: 50px;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (width <= 768px) {
+  .catalog {
+    justify-content: center;
+  }
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mobileDropdown {
+    padding: 0 30px;
+  }
+}
+
+@media (width <= 510px) {
+  .mobileDropdown {
+    padding: 0;
+  }
+  .catalog {
+    padding: 0 5px;
+  }
+  .products {
+    column-gap: 20px;
+    row-gap: 30px;
+  }
+}

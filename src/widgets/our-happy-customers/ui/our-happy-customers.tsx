@@ -1,11 +1,12 @@
 import { FC, useEffect, useRef, useState } from "react";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
-import styles from "./our-happy-customers.module.scss";
+import styles from "./styles.module.scss";
 import "swiper/swiper-bundle.css";
 import { Navigation, EffectCoverflow, Pagination } from "swiper/modules";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { ReviewCard, selectReviews } from "@/entities/reviews";
 import { useSelector } from "@/entities/store";
+import { motion } from "framer-motion";
 
 export const OurHappyCustomers: FC = () => {
   const reviews = useSelector(selectReviews);
@@ -15,8 +16,17 @@ export const OurHappyCustomers: FC = () => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(
     null
   );
-  const leftArrow = useRef(null);
-  const rightArrow = useRef(null);
+  const leftArrow = useRef<HTMLButtonElement>(null);
+  const rightArrow = useRef<HTMLButtonElement>(null);
+  
+  const [isFirstRender] = useState(() => {
+    return sessionStorage.getItem(`isFirstRender-OurHappyCustomers`) !== "true";
+  });
+  useEffect(() => {
+    if (isFirstRender) {
+      sessionStorage.setItem(`isFirstRender-OurHappyCustomers`, "true");
+    }
+  }, [isFirstRender]);
 
   useEffect(() => {
     if (swiperInstance) {
@@ -25,7 +35,13 @@ export const OurHappyCustomers: FC = () => {
   }, [swiperInstance]);
 
   return (
-    <section className={styles.ourHappyCustomers}>
+    <motion.section
+      className={styles.ourHappyCustomers}
+      initial={isFirstRender && { opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
       <h2 className={styles.h2}>Our happy customers</h2>
       <Swiper
         navigation={{
@@ -36,7 +52,7 @@ export const OurHappyCustomers: FC = () => {
           setSwiperInstance(swiper);
           setTimeout(() => {
             // @ts-expect-error/the property exists
-            swiper.params.navigation.prevEl = leftArrow.current; 
+            swiper.params.navigation.prevEl = leftArrow.current;
             // @ts-expect-error/the property exists
             swiper.params.navigation.nextEl = rightArrow.current;
             swiper.navigation.init();
@@ -44,6 +60,7 @@ export const OurHappyCustomers: FC = () => {
           });
         }}
         effect="coverflow"
+        direction="horizontal"
         className={styles.swiper}
         modules={[Navigation, Pagination, EffectCoverflow]}
         centeredSlides
@@ -55,7 +72,11 @@ export const OurHappyCustomers: FC = () => {
           modifier: 1.5,
           slideShadows: false,
         }}
-        pagination={{ el: "#pagination", clickable: true }}
+        pagination={{
+          el: "#pagination",
+          clickable: true,
+          type: "bullets",
+        }}
       >
         {bestReviews.map((item) => (
           <SwiperSlide className={styles.swiperSlide} key={item.id}>
@@ -72,6 +93,6 @@ export const OurHappyCustomers: FC = () => {
           <FaArrowRight />
         </button>
       </div>
-    </section>
+    </motion.section>
   );
 };

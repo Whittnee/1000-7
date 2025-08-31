@@ -1,18 +1,20 @@
-import { CartActionsFeature } from "@/features/cart";
+import { CartActionsFeature } from "@/features/cart-actions-feature";
 import { ColorSelector } from "@/shared/ui/color-selector";
 import { ImageSelector } from "@/shared/ui/image-selector";
 import { ModalOverlay } from "@/shared/ui/modal-overlay";
 import { Separator } from "@/shared/ui/separator";
 import { SizeSelector } from "@/shared/ui/size-selector";
-import { FC, useCallback, useEffect, useState } from "react";
-import { IoIosArrowForward } from "react-icons/io";
-import { Link } from "react-router";
-import styles from "./product-card.module.scss";
-import { TClothes } from "@/shared/types/clothes";
+import { FC, useEffect, useState } from "react";
+import { TProduct } from "@/shared/types/products";
 import { StarsRaiting } from "@/shared/ui/stars-raiting";
 import { TUserLocation } from "@/shared/types/user";
+import { Navigation } from "@/shared/ui/navigation";
+import { useMediaQuery } from "react-responsive";
+import { Image } from "@/shared/ui/image";
+import { AnimatePresence } from "framer-motion";
+import styles from "./styles.module.scss";
 
-export const ProductCard: FC<TClothes> = ({
+export const ProductCard: FC<TProduct> = ({
   category,
   description,
   discount,
@@ -28,12 +30,15 @@ export const ProductCard: FC<TClothes> = ({
   const [selectedColor, setSelectedColor] = useState<string>("");
   const [selectedImage, setSelectedImage] = useState<string>("");
   const [showPicture, setShowPicture] = useState<boolean>(false);
+  const isTablet = useMediaQuery({ maxWidth: 845 });
+  const isLaptop = useMediaQuery({ minWidth: 846, maxWidth: 1140});
+  const isComputer = useMediaQuery({ maxWidth: 1700})
+
   const [location] = useState<TUserLocation | null>(() => {
     const stored = localStorage.getItem("location");
-    return stored ? JSON.parse(stored) : null
+    return stored ? JSON.parse(stored) : null;
   });
   const userId = localStorage.getItem("userId")!;
-
 
   useEffect(() => {
     if (colors.length > 0 && images.length > 0) {
@@ -43,57 +48,42 @@ export const ProductCard: FC<TClothes> = ({
     }
   }, [colors, images]);
 
-  const handleShowPicture = useCallback(() => {
+  const handleShowPicture = () => {
     setShowPicture((prev) => !prev);
-  }, []);
+  };
 
   return (
     <div className={styles.productCard}>
-      <ul className={styles.navigation}>
-        <li>
-          <Link className={styles.link} to="/">
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link className={styles.link} to="/catalog">
-            <IoIosArrowForward /> Catalog
-          </Link>
-        </li>
-        <li>
-          <Link className={styles.link} to={`/catalog/?category=${category}`}>
-            <IoIosArrowForward /> {category}
-          </Link>
-        </li>
-        <li className={styles.link}>
-          <IoIosArrowForward /> {name}
-        </li>
-      </ul>
+      <Navigation className={styles.navigation} name={name} category={category} />
       <div className={styles.content}>
         <div className={styles.images}>
           <ImageSelector
+            className={styles.selectedImage}
+            direction={isComputer ? 'row' : 'column'}
             images={images}
             selectedImage={selectedImage}
             setSelectedImage={setSelectedImage}
           />
-          <img
+          <Image
             onClick={handleShowPicture}
-            className={styles.img}
+            className={styles.mainImage}
             src={selectedImage}
             alt={name}
           />
         </div>
-        {showPicture && (
-          <ModalOverlay onClose={handleShowPicture}>
-            <img className={styles.bigImg} src={selectedImage} alt={name} />
-          </ModalOverlay>
-        )}
+        <AnimatePresence>
+          {showPicture && (
+            <ModalOverlay onClose={handleShowPicture}>
+              <Image className={styles.bigImg} src={selectedImage} alt={name} />
+            </ModalOverlay>
+          )}
+        </AnimatePresence>
         <div className={styles.info}>
           <div className={styles.header}>
-            <h3 className={styles.title}>{name}</h3>
+            <h2 className={styles.title}>{name}</h2>
             <div className={styles.raiting}>
               <StarsRaiting className={styles.star} rating={rating} />
-              <p className={styles.raiting}>{rating}/5</p>
+              <p className={styles.number}>{rating}/5</p>
             </div>
             <p className={styles.description}>{description}</p>
           </div>
@@ -101,7 +91,7 @@ export const ProductCard: FC<TClothes> = ({
           <ColorSelector
             colors={colors}
             selectedColor={selectedColor}
-            size="medium"
+            size={isLaptop ? 'small' : "medium"}
             showTitle
             setSelectedColor={setSelectedColor}
           />
@@ -109,12 +99,15 @@ export const ProductCard: FC<TClothes> = ({
           <SizeSelector
             sizes={sizes}
             selectedSize={selectedSize}
-            size="medium"
+            size={isLaptop ? 'small' : "medium"}
             showTitle
             setSelectedSize={setSelectedSize}
           />
+        {isTablet && <Separator />}
         </div>
         <CartActionsFeature
+          size={isLaptop ? 'medium' : 'big' }
+          className={styles.cartActions}
           location={location}
           userId={userId}
           selectedColor={selectedColor}
