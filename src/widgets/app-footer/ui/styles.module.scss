@@ -4,13 +4,12 @@
   flex-direction: column;
 }
 
-.content {
+.top {
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 20px;
-  padding: 0 3.6rem;
-  margin-bottom: 3.6rem;
+  padding: 55px;
 }
 
 .info {
@@ -60,19 +59,39 @@
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  padding: 0 3.6rem;
-  margin: 0.5rem 0;
+  padding: 10px 57px;
+
+}
+
+.text {
+  font-size: 16px;
+  color: var(--accent-color);
+  text-align: center;
 }
 
 .copyright {
   color: var(--accent-color);
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: normal;
 }
-
 
 .paymentIcon {
   width: 2rem;
   height: auto;
   color: var(--accent-color);
 }
+
+@media (width <= 768px) {
+  .bottom {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 10px 40px;
+  }
+  .top {
+    padding: 20px 10px 40px;
+  }
+  .copyright {
+    text-align: center;
+  }
+}
+

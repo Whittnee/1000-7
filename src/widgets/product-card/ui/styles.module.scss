@@ -1,0 +1,261 @@
+.productCard {
+  display: flex;
+  flex-direction: column;
+  padding: 0 57px;
+  margin: 16px 0 32px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  align-items: flex-start;
+  margin-bottom: 100px;
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.mainImage {
+  width: 440px;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bigImg {
+  width: 700px;
+  height: auto;
+  border-radius: 30px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  line-height: 1;
+}
+
+.raiting {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.star {
+  height: 27px;
+  width: 27px;
+}
+
+.number {
+  font-size: 1rem;
+  padding-bottom: 3px;
+}
+
+.price {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.navigation {
+  font-size: 1.1rem;
+  margin-bottom: 45px;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: var(--opacity-color);
+  font-weight: normal;
+  min-width: 280px;
+}
+
+.cartActions {
+  min-width: 295px;
+}
+
+@media (width <= 1700px) {
+  .productCard {
+    padding: 0 30px;
+  }
+  .mainImage {
+    width: 320px;
+  }
+  .selectedImage {
+    max-width: 100px;
+    width: 100%;
+  }
+  .images {
+    flex-direction: column-reverse;
+  }
+  .bigImg {
+    max-width: 500px;
+  }
+}
+
+@media (width <= 1270px) {
+  .mainImage {
+    width: 300px;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+  .description {
+    font-size: 1.1rem;
+  }
+  .bigImg {
+    max-width: 400px;
+  }
+}
+
+@media (width <= 1140px) {
+  .title {
+    font-size: 2rem;
+  }
+  .description {
+    font-size: 1rem;
+  }
+  .mainImage {
+    width: 280px;
+  }
+  .info {
+    gap: 15px;
+  }
+  .header {
+    gap: 10px;
+  }
+}
+
+@media (width <= 1070px) {
+  .title {
+    font-size: 1.9rem;
+  }
+  .mainImage {
+    width: 250px;
+  }
+  .productCard {
+    padding: 0 20px;
+  }
+  .content {
+    gap: 20px;
+  }
+}
+
+@media (width <= 950px) {
+  .productCard {
+    padding: 0 10px;
+  }
+  .mainImage {
+    width: 220px;
+  }
+  .content {
+    gap: 10px;
+  }
+}
+
+@media (width <= 845px) {
+  .images {
+    padding: 0 15px;
+    align-self: center;
+  }
+  .content {
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  .title {
+    font-size: 2.5rem;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .raiting {
+    align-self: center;
+  }
+  .description {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .productCard {
+    padding: 0 20px;
+  }
+  .content {
+    flex-direction: column;
+  }
+  .description {
+    min-width: 250px;
+  }
+  .cartActions {
+    align-self: center;
+    max-width: 375px;
+  }
+  .mainImage {
+    max-width: 380px;
+    width: 100%;
+  }
+  .selectedImage {
+    max-width: 120px;
+  }
+  .info {
+    gap: 20px;
+  }
+}
+
+@media (width <= 470px) {
+  .navigation {
+    font-size: 1rem;
+    gap: 3px;
+  }
+}
+
+@media (width <= 450px) {
+  .title {
+    text-align: start;
+    font-size: 2.1rem;
+  }
+  .raiting {
+    align-self: flex-start;
+  }
+  .description {
+    text-align: start;
+    font-size: 1.1rem;
+  }
+  .productCard {
+    padding: 0 10px;
+  }
+  .bigImg {
+    width: 325px;
+  }
+  ul.navigation {
+    margin-bottom: 25px;
+  }
+}
+
+@media (width <= 410px) {
+  ul.navigation {
+    font-size: 0.9rem;
+  }
+}
+
+@media (width <= 375px) {
+  .description {
+    font-size: 1rem;
+  }
+}

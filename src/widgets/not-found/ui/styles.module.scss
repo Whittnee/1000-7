@@ -1,0 +1,33 @@
+.notFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.h1 {
+  font-size: clamp(3.125rem, 0.4464rem + 13.3929vw, 12.5rem);  
+  font-weight: normal;
+  line-height: 1.1;
+  color: var(--accent-color);
+}
+
+.p {
+  font-size: clamp(2.1875rem, 1.0221rem + 4.9724vw, 5rem);
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 1.1;
+  color: var(--accent-color);
+}
+
+@media(width <= 425px) {
+  .p {
+    font-size: 35px
+  }
+}
+
+@media(width <= 325px) {
+  .p {
+    font-size: 30px
+  }
+}

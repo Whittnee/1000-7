@@ -1,12 +1,13 @@
 .ourHappyCustomers {
-  margin-top: 5rem;
+  margin-top: 80px;
+  padding: 0 10px;
 }
 
 .h2 {
   text-transform: uppercase;
   font-weight: 800;
   font-size: 3rem;
-  padding: 4rem 0;
+  padding: 65px 0;
   color: var(--accent-color);
   text-align: center;
 }
@@ -26,22 +27,18 @@
     font-size: 1.5rem;
     color: var(--accent-color);
   }
-  .pagination {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    width: 15rem !important;
-  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  max-width: 500px !important;
+  width: 100%;
 }
 
 .swiperSlide {
-  width: 40rem !important;
-  display: flex;
+  max-width: 600px !important;
   background-color: var(--bg-color) !important;
   border-radius: 10px;
 }
-
-
-
-
-

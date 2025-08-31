@@ -1,1 +1,0 @@
-export { MightLike } from "./ui/might-like"
