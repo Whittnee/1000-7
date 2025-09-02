@@ -1,8 +1,8 @@
-import { TClothes } from "@/shared/types/clothes";
+import { TProduct } from "@/shared/types/products";
 
 
 export type TCartClothes = Omit<
-  TClothes,
+  TProduct,
   "sizes" | "colors" | "description" | "category"
 > & {
   size: string;
@@ -11,7 +11,7 @@ export type TCartClothes = Omit<
 };
 
 export type TCartResponse = {
-  clothes: TCartClothes[];
+  products: TCartClothes[];
   totalPrices: {
     subtotal: number;
     total: number;
@@ -20,7 +20,7 @@ export type TCartResponse = {
   };
 }
 
-export type TUpdateCart = {
+export type TCartUpdate = {
   userId: string;
   productId: number;
 }
