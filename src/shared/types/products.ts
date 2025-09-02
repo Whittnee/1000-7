@@ -1,4 +1,4 @@
-export type TClothes = {
+export type TProduct = {
   id: number,
   name: string,
   price: number,
@@ -14,8 +14,8 @@ export type TClothes = {
   colors: string[]
 }
 
-export type TSlicedClothes = Omit<
-  TClothes,
+export type TSlicedProduct = Omit<
+  TProduct,
   "description" | "images"
 > & {
   image: string;
