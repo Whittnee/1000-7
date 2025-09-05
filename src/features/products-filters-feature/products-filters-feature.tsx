@@ -1,4 +1,3 @@
-import { TCLothesFilterFeatureProps } from "@/features/clothes/clothes-filter-feature/clothes-filter-types";
 import { ColorSelector } from "@/shared/ui/color-selector";
 import { PriceRange } from "@/shared/ui/price-range";
 import { Separator } from "@/shared/ui/separator";
@@ -7,10 +6,14 @@ import { Switcher } from "@/shared/ui/switcher";
 import clsx from "clsx";
 import { FC, memo } from "react";
 import { RxCaretUp, RxMixerVertical } from "react-icons/rx";
-import styles from "./clothes-filter-feature.module.scss";
+import styles from "./styles.module.scss";
+import { TProductsFiltersFeatureProps } from "@/features/products-filters-feature/types";
+import { Button } from "@/shared/ui/button";
 
-export const ClothesFilterFeature: FC<TCLothesFilterFeatureProps> = memo(
+export const ProductsFiltersFeature: FC<TProductsFiltersFeatureProps> = memo(
   ({
+    size,
+    className,
     selectedSize,
     selectedColor,
     selectedCategory,
@@ -20,6 +23,7 @@ export const ClothesFilterFeature: FC<TCLothesFilterFeatureProps> = memo(
     setSelectedColor,
     setSelectedCategory,
     handleFilter,
+    ...otherProps
   }) => {
     const sizes = ["Small", "Medium", "Large", "X-Large"];
     const categories = [
@@ -42,15 +46,20 @@ export const ClothesFilterFeature: FC<TCLothesFilterFeatureProps> = memo(
       "LightCoral",
       "Orange",
       "SpringGreen",
-      "LightPink"
+      "LightPink",
+      "Goldenrod",
+      "Tomato",
+      "Azure",
     ];
 
     return (
-      <div className={styles.clothesFilterFeature}>
+      <div
+        className={clsx(styles.productsFiltersFeature, styles[size], className)}
+        {...otherProps}
+      >
         <div className={styles.property}>
           <span className={styles.span}>Filters</span>
-            <RxMixerVertical className={styles.icon} />
-          
+          <RxMixerVertical className={styles.icon} />
         </div>
         <Separator />
         <div className={styles.actions}>
@@ -75,7 +84,7 @@ export const ClothesFilterFeature: FC<TCLothesFilterFeatureProps> = memo(
         <div className={styles.actions}>
           <div className={styles.property}>
             <span className={styles.span}>Price</span>
-              <RxCaretUp className={styles.icon} />
+            <RxCaretUp className={styles.icon} />
           </div>
           <div>
             <PriceRange
@@ -90,7 +99,7 @@ export const ClothesFilterFeature: FC<TCLothesFilterFeatureProps> = memo(
         <div className={styles.actions}>
           <div className={styles.property}>
             <span className={styles.span}>Colors</span>
-            <RxCaretUp className={styles.icon}/>
+            <RxCaretUp className={styles.icon} />
           </div>
           <ul>
             <ColorSelector
@@ -118,9 +127,11 @@ export const ClothesFilterFeature: FC<TCLothesFilterFeatureProps> = memo(
             />
           </div>
         </div>
-        <button className={styles.apply} onClick={handleFilter}>
-          Apply Filter
-        </button>
+        <Button
+          className={styles.applyButton}
+          onClick={handleFilter}
+          label='Apply Filter'
+        />
       </div>
     );
   }

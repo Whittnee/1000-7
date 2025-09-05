@@ -1,4 +1,5 @@
-export type TCLothesFilterFeatureProps = {
+export type TProductsFiltersFeatureProps = {
+  size: 'mobile' | 'desktop'
   selectedSize: string;
   selectedColor: string;
   selectedCategory: string;
@@ -8,4 +9,4 @@ export type TCLothesFilterFeatureProps = {
   setSelectedColor: React.Dispatch<React.SetStateAction<string>>;
   setSelectedCategory: React.Dispatch<React.SetStateAction<string>>;
   handleFilter: () => void;
-};
+} & React.HTMLAttributes<HTMLDivElement>;

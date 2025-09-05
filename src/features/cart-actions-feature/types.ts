@@ -1,6 +1,7 @@
 import { TUserLocation } from "@/shared/types/user";
 
 export type TCartActionsFeatureProps = {
+  size: 'medium' | 'big';
   selectedSize: string;
   selectedColor: string;
   userId: string;
@@ -10,4 +11,4 @@ export type TCartActionsFeatureProps = {
     discountedPrice: number;
     discount: number | null;
   }
-}
+} & React.HTMLAttributes<HTMLDivElement>

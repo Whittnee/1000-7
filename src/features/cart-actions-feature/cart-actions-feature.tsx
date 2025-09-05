@@ -1,11 +1,21 @@
-import { CartActions, useCartActions } from "@/entities/cart";
-import { TCartActionsFeatureProps } from "@/features/cart/cart-actions-feature/cart-actions-feature-types";
+import { CartActions } from "@/entities/cart";
+import { TCartActionsFeatureProps } from "./types";
 import { useDeliveryDates } from "@/shared/hooks/useDeliveryDates";
 import { FC, memo } from "react";
 import { useParams } from "react-router";
+import { useCartActions } from "@/entities/cart/hooks/useCartActions";
 
 export const CartActionsFeature: FC<TCartActionsFeatureProps> = memo(
-  ({ selectedColor, selectedSize, userId, prices, location }) => {
+  ({
+    size = 'big',
+    selectedColor,
+    selectedSize,
+    userId,
+    prices,
+    location,
+    className,
+    ...otherProps
+  }) => {
     const { id } = useParams();
     const { today, deliveryDate } = useDeliveryDates();
 
@@ -22,6 +32,7 @@ export const CartActionsFeature: FC<TCartActionsFeatureProps> = memo(
     return (
       <CartActions
         {...prices}
+        size={size}
         quantity={quantity}
         loadingCart={loadingCart}
         location={location}
@@ -32,6 +43,8 @@ export const CartActionsFeature: FC<TCartActionsFeatureProps> = memo(
         onDecrement={onDecrement}
         onRemove={onRemove}
         onAddToCart={() => onAddToCart(selectedSize, selectedColor)}
+        className={className}
+        {...otherProps}
       />
     );
   }
