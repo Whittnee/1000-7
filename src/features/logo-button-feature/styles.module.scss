@@ -1,0 +1,21 @@
+.logo {
+  border: 2px solid var(--accent-color);
+  background-color: transparent;
+  padding: 4px 12px;
+  color: var(--accent-color);
+  font-weight: 900;
+  font-size: 1.6rem;
+  white-space: nowrap;
+  box-shadow: 2px 2px 0 var(--accent-color), 4px 4px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .logo:hover {
+    box-shadow: 4px 4px 0 var(--accent-hover-color),
+      6px 6px 0 rgba(0, 0, 0, 0.3);
+    color: var(--accent-hover-color);
+    border-color: var(--accent-hover-color);
+  }
+}

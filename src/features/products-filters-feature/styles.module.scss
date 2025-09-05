@@ -1,12 +1,21 @@
-.clothesFilterFeature {
+.productsFiltersFeature {
   display: flex;
-  max-width: 300px;
   width: 100%;
   flex-direction: column;
+  transform-origin: top;
   gap: 24px;
-  padding: 24px;
-  border: 1px solid var(--border-opacity-color);
-  border-radius: 15px;
+
+  &.mobile {
+    max-width: none;
+    padding: 20px;
+  }
+  &.desktop {
+    max-width: 300px;
+    min-width: 250px;
+    border: 1px solid var(--border-opacity-color);
+    border-radius: 15px;
+    padding: 24px;
+  }
 }
 
 .property {
@@ -19,7 +28,7 @@
 .actions {
   display: flex;
   flex-direction: column;
-  gap: 20px
+  gap: 20px;
 }
 
 .span {
@@ -29,11 +38,11 @@
 }
 
 .icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 24px;
+  height: 24px;
   background-color: transparent;
   transform: rotate(180deg);
-  color: var(--accent-color)
+  color: var(--accent-color);
 }
 
 .categories {
@@ -57,18 +66,21 @@
   }
 }
 
-.apply {
+.applyButton {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 2.5rem;
-  font-size: 1rem;
+  height: 40px;
+  font-size: 1.2rem;
+  width: 100%;
   border-radius: 50px;
   background-color: var(--accent-color);
   color: var(--text-color);
   transition: background-color 0.3s ease;
-  &:hover {
-    background-color: var(--accent-hover-color)
-    
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .applyButton:hover {
+    background-color: var(--accent-hover-color);
   }
 }

@@ -1,18 +1,19 @@
-import { TSlicedClothes } from "@/shared/types/clothes";
-import { FC, useCallback, useState } from "react";
+import { TSlicedProduct } from "@/shared/types/products";
+import { FC, memo, useState, useRef } from "react";
 import { FaSearch } from "react-icons/fa";
-import styles from "./search-bar-feature.module.scss"
-import { Link } from "react-router";
+import styles from "./styles.module.scss";
 import { IoMdClose } from "react-icons/io";
 import clsx from "clsx";
-import { TSearchBarFeatureProps } from "@/features/search-bar-feature/search-bar-feature-types";
+import { TSearchBarFeatureProps } from "@/features/search-bar-feature/types";
+import { SearchCard } from "@/entities/clothes";
 
-export const SearchBarFeature: FC<TSearchBarFeatureProps> = ({ clothes }) => {
-  const [searchTerm, setSearchTerm] = useState<string>("");
-  const [filteredItems, setFilteredItems] = useState<TSlicedClothes[]>([]);
+export const SearchBarFeature: FC<TSearchBarFeatureProps> = memo(
+  ({ clothes, className, autofocus, handleEvent, ...otherProps }) => {
+    const [searchTerm, setSearchTerm] = useState<string>("");
+    const [filteredItems, setFilteredItems] = useState<TSlicedProduct[]>([]);
+    const listRef = useRef<HTMLUListElement | null>(null);
 
-  const handleInputChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const value = e.target.value;
       setSearchTerm(value);
       if (value) {
@@ -21,40 +22,61 @@ export const SearchBarFeature: FC<TSearchBarFeatureProps> = ({ clothes }) => {
         );
         setFilteredItems(filteredItems);
       } else setFilteredItems([]);
-    },
-    [clothes]
-);
+    };
 
-  const handleClearSearch = useCallback(() => {
-    setSearchTerm("");
-    setFilteredItems([]);
-  }, []);
+    const handleClearSearchBar = () => {
+      setSearchTerm("");
+      setFilteredItems([]);
+    };
 
-  return (
-    <div className={styles.searchBarFeature}>
-      <FaSearch className={styles.searchIcon} />
-      <input
-        type="text"
-        placeholder="Type to search..."
-        value={searchTerm}
-        onChange={handleInputChange}
-      />
-      {filteredItems.length > 0 && (
-        <ul className={styles.dropdown}>
-          {filteredItems.map((item) => (
-            <Link to={`/clothes/${item.id}`} onClick={handleClearSearch}>
-              <li className={styles.dropdownItem} key={item.id}>
-                <img src={item.image} alt={item.name} />
-                {item.name}
+    const handleMove = () => {
+      handleClearSearchBar();
+      if (handleEvent) {
+        handleEvent();
+      }
+    };
+
+    return (
+      <div
+        className={clsx(styles.searchBarFeature, className)}
+        {...otherProps}
+        onBlur={(e) => {
+          if (!e.relatedTarget && listRef.current) {
+            listRef.current.style.display = "none";
+          }
+        }}
+        tabIndex={-1}
+      >
+        <FaSearch className={styles.searchIcon} />
+        <input
+          type="text"
+          placeholder="Type to search..."
+          value={searchTerm}
+          onChange={handleInputChange}
+          autoFocus={autofocus}
+          onFocus={() => {
+            if (listRef.current) listRef.current.style.display = "block";
+          }}
+        />
+        {filteredItems.length > 0 && (
+          <ul ref={listRef} className={styles.dropdown}>
+            {filteredItems.map((item) => (
+              <li key={item.id}>
+                <SearchCard
+                  image={item.image}
+                  name={item.name}
+                  productId={item.id}
+                  onClick={handleMove}
+                />
               </li>
-            </Link>
-          ))}
-        </ul>
-      )}
-      <IoMdClose
-        className={clsx(styles.closeIcon, { [styles.active]: searchTerm })}
-        onClick={handleClearSearch}
-      />
-    </div>
-  );
-};
+            ))}
+          </ul>
+        )}
+        <IoMdClose
+          className={clsx(styles.closeIcon, { [styles.active]: searchTerm })}
+          onClick={handleClearSearchBar}
+        />
+      </div>
+    );
+  }
+);
